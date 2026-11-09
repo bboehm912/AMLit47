@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172720">
+  <title>Death of a Salesman | American Literature</title>
+  <style>
+    :root{--ink:#173d29;--deep:#123a24;--paper:#f8fafc;--white:#ffffff;--sage:#b6c4ac;--lime:#d8e8a4;--rust:#bb604b;--muted:#6b756d;--line:#d5ded8;--primary:#15803d}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif}
+    button,a{font:inherit}
+    button{cursor:pointer}
+    a{color:inherit;text-underline-offset:3px}
+    a:hover{color:#567642}
+    :focus-visible{outline:3px solid #d99054;outline-offset:4px}
+    .shell{min-height:100vh;display:grid;grid-template-columns:244px minmax(0,1fr)}
+    .sidebar{background:var(--deep);color:#e7eee1;padding:30px 22px 24px;display:flex;flex-direction:column;gap:32px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:39px;height:39px;border:1px solid #839789;border-radius:50%;display:grid;place-items:center;font-family:Georgia,serif;font-size:17px;color:var(--lime);flex:none}
+    .brand strong,.brand small{display:block}
+    .brand strong{font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+    .brand small{color:#a7b9a9;margin-top:5px;font-size:10px;letter-spacing:.05em}
+    .side-label,.eyebrow,.overline{text-transform:uppercase;letter-spacing:.15em;font-size:10px;font-weight:700}
+    .side-label{color:#92a99a;margin:0 0 15px}
+    .nav{display:grid;gap:3px}
+    .nav button{background:transparent;color:#aabbb0;border:0;text-align:left;padding:10px 11px;border-radius:7px;display:flex;align-items:center;gap:12px;font-size:12px;line-height:1.3}
+    .nav button span{font-size:10px;color:#80958a}
+    .nav button:hover,.nav button[aria-current="step"]{background:#30453a;color:#fff}
+    .nav button[aria-current="step"] span{color:var(--lime)}
+    .sidebar-bottom{margin-top:auto;border-top:1px solid #405249;padding-top:20px}
+    .badge{display:flex;align-items:center;gap:10px;color:#c7d4c8;font-size:11px;line-height:1.45}
+    .badge-mark{width:31px;height:31px;border-radius:8px;background:#d7e5a5;color:#203226;display:grid;place-items:center;font-weight:bold}
+    .badge small{display:block;color:#9eb1a3}
+    .main{min-width:0;display:flex;flex-direction:column;min-height:100vh}
+    .topbar{min-height:71px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 5.2%;color:#526158;font-size:11px}
+    .crumb{letter-spacing:.05em}.crumb strong{color:var(--ink)}
+    .top-right{display:flex;align-items:center;gap:12px}
+    .pill{border:1px solid #ced7c8;border-radius:99px;padding:8px 11px;font-size:10px;font-weight:bold;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+    .top-button{border:0;background:transparent;color:#526158;font-size:11px}
+    .course-header{margin:22px 5.2% 0;padding:16px 22px;background:#fff;border-top:5px solid var(--primary);border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .course-identity{display:flex;align-items:center;gap:18px}
+    .course-identity h2{font:700 22px 'Segoe UI',sans-serif;letter-spacing:0;margin:0 0 5px}
+    .course-identity p{font-size:13px;color:#475569;margin:0}
+    .school-logo{width:70px;height:70px;flex:none;display:grid;place-items:center}
+    .school-logo img{max-width:100%;max-height:100%;object-fit:contain}
+    .asset-placeholder{font-size:10px;line-height:1.3;text-align:center;color:#64748b}
+    .stamp-container{width:110px;height:110px;position:relative;flex:none;display:grid;place-items:center}
+    .stamp-container .stamp-photo{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:60px;height:60px;border-radius:50%;object-fit:cover}
+    .stamp-container .stamp-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+    .stamp-container.has-asset .asset-placeholder{position:absolute;bottom:-13px;background:#fff}
+    .stamp-container.has-both .asset-placeholder{display:none}
+    .course-tabs{margin:18px 5.2% 0;display:flex;gap:10px}
+    .course-tabs button{flex:1;padding:13px 10px;border:1px solid #cbd5e1;border-radius:8px;background:#fff;color:#334155;font-size:12px;font-weight:700}
+    .course-tabs button[aria-pressed="true"]{background:var(--primary);color:white;border-color:var(--primary)}
+    .course-panel{width:100%;max-width:1450px;margin:0 auto;padding:25px 5.2% 40px;flex:1}
+    .hub-card,.checkpoint-card{background:white;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.05);padding:clamp(22px,4vw,36px)}
+    .hub-card h2,.checkpoint-card h2{font-size:clamp(30px,3vw,42px)}
+    .hub-card>p,.checkpoint-card>p{color:#475569;font-size:14px}
+    .resource{display:flex;justify-content:space-between;align-items:center;gap:20px;background:#f8fafc;border:1px solid #cbd5e1;border-left:4px solid var(--primary);border-radius:8px;padding:18px;margin-top:14px}
+    .resource h3{font:700 16px 'Segoe UI',sans-serif;letter-spacing:0;margin:0 0 7px}
+    .resource p{color:#475569;font-size:13px;margin:0}
+    .resource a,.print-button{flex:none;display:inline-block;background:var(--primary);color:white;border:0;border-radius:6px;padding:11px 15px;text-decoration:none;font-size:12px;font-weight:700}
+    .resource a:hover,.print-button:hover{background:#166534;color:white}
+    .form-group{margin:22px 0}
+    .form-group label{display:block;font-weight:700;font-size:14px;margin-bottom:8px}
+    .form-group input,.form-group textarea{width:100%;border:1px solid #cbd5e1;border-radius:6px;padding:10px;font:inherit;color:#0f172a}
+    .form-group textarea{min-height:110px;resize:vertical}
+    .content{width:100%;max-width:1450px;margin:auto;padding:35px 5.2% 28px;flex:1}
+    .deck-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+    .deck-head .eyebrow{color:#607262}
+    .counter{font-size:11px;color:#6b7a70;letter-spacing:.08em;white-space:nowrap}
+    .counter strong{color:var(--ink);font-size:13px}
+    .slide{animation:appear .32s ease;min-height:510px}
+    .js .slide[hidden]{display:none}
+    @keyframes appear{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:normal}
+    h1{font-size:clamp(44px,5.9vw,83px);letter-spacing:-.055em;line-height:.98;margin:0 0 25px}
+    h2{font-size:clamp(36px,4.2vw,58px);letter-spacing:-.045em;line-height:1.06;margin-bottom:18px}
+    h3{font-size:23px;letter-spacing:-.025em;line-height:1.2}
+    p{line-height:1.65}
+    .hero{position:relative;overflow:hidden;background:var(--ink);color:var(--white);border-radius:11px;min-height:510px;display:grid;grid-template-columns:1.05fr .95fr}
+    .hero-copy{padding:clamp(32px,5vw,66px);position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+    .hero .overline{color:#c6dda1;margin-bottom:27px}
+    .hero h1 em{color:var(--lime);font-weight:normal}
+    .hero-copy>p{max-width:430px;color:#ccd8cb;font-size:14px}
+    .hero-line{width:38px;height:2px;background:#d3e6a3;margin:10px 0 20px}
+    .hero-art{position:relative;min-height:400px;background:linear-gradient(90deg,#172720 0%,rgba(23,39,32,.15) 36%,rgba(23,39,32,.08) 100%),linear-gradient(0deg,#172720,transparent 30%),url('https://commons.wikimedia.org/wiki/Special:FilePath/WendellPierce.jpg?width=900') center 28%/cover}
+    .hero-art:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(23,39,32,.2),transparent 65%)}
+    .hero-caption{position:absolute;z-index:1;right:22px;bottom:22px;text-align:right;font-size:10px;line-height:1.6;color:#e3e9de;text-shadow:0 1px 5px #000}
+    .hero-caption a{color:#fff}
+    .hero-tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+    .hero-tags span{border:1px solid #607c68;border-radius:99px;color:#dce7d7;padding:8px 11px;font-size:10px;letter-spacing:.04em}
+    .slide-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.75fr);gap:clamp(25px,5vw,75px);align-items:start;padding:36px 0}
+    .slide-intro .lead{max-width:650px;font-size:16px;color:#5a685f}
+    .kicker{color:#678067;margin-bottom:17px;text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:bold}
+    .rule{height:1px;background:var(--line);margin:24px 0}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:28px}
+    .card{background:var(--white);border:1px solid #dfe3d8;border-radius:9px;padding:24px}
+    .card .num{color:#819284;font-size:10px;font-weight:bold;letter-spacing:.1em}
+    .card h3{font-size:21px;margin:17px 0 10px}
+    .card p,.card li{font-size:13px;color:#59685e;line-height:1.6}
+    .card p:last-child{margin-bottom:0}
+    .callout{background:#e2e9d8;border-radius:9px;padding:25px;border:1px solid #d0dcc9}
+    .callout.dark{background:var(--ink);border-color:var(--ink);color:#edf3e6}
+    .callout .overline{color:#678067;margin-bottom:14px}
+    .callout.dark .overline{color:#c9e2a2}
+    .callout p{font-size:14px;margin:0}
+    .callout strong{font-family:Georgia,serif;font-size:23px;line-height:1.3;font-weight:normal}
+    .prompt-list{padding-left:20px;margin-bottom:0}
+    .prompt-list li{margin-bottom:12px;line-height:1.55;font-size:14px}
+    .photo-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;margin-top:25px}
+    .photo-card{overflow:hidden;background:var(--white);border:1px solid #dde3d8;border-radius:9px}
+    .photo-card img{display:block;width:100%;height:220px;object-fit:cover;object-position:center 25%;background:#c9d2c2;color:#263c2c;font-size:12px}
+    .photo-card div{padding:16px}
+    .photo-card h3{font-size:19px;margin:0 0 7px}
+    .photo-card p{font-size:12px;line-height:1.45;color:#617065;margin:0 0 8px}
+    .photo-card .credit{font-size:10px;line-height:1.4;margin:0;color:#6c776e}
+    .note{font-size:11px;color:#6b796e;margin-top:15px;line-height:1.5}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:25px}
+    .tag{display:inline-block;background:#e6eddd;color:#4b6a4e;border-radius:99px;padding:6px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.08em;font-weight:bold}
+    .source-list{padding-left:18px;color:#58685d;font-size:13px;line-height:1.8}
+    .takeaway{border-left:3px solid var(--rust);padding:4px 0 4px 18px;font-family:Georgia,serif;font-size:20px;line-height:1.4;margin-top:25px}
+    .controls{border-top:1px solid var(--line);padding:20px 5.2% 24px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .progress-wrap{display:flex;align-items:center;gap:12px;color:#78867c;font-size:10px;letter-spacing:.04em}
+    .progress-track{width:130px;height:3px;background:#d4dcd1;border-radius:5px;overflow:hidden}
+    .progress-bar{height:100%;background:#64846b;transition:width .25s ease}
+    .buttons{display:flex;gap:9px}
+    .buttons button{border:1px solid #c9d3c7;background:transparent;color:var(--ink);border-radius:6px;padding:12px 17px;font-size:11px;font-weight:bold}
+    .buttons .next{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .buttons button:disabled{opacity:.42;cursor:not-allowed}
+    .skip{position:absolute;top:-100px;left:12px;background:white;padding:10px;z-index:10}.skip:focus{top:12px}
+    .js-only{display:none}.js .js-only{display:flex}.js .side-nav{display:block}
+    [hidden]{display:none!important}
+    @media(max-width:1050px){.shell{grid-template-columns:190px minmax(0,1fr)}.sidebar{padding:25px 15px}.photo-grid{grid-template-columns:repeat(2,1fr)}.photo-card img{height:240px}}
+    @media(max-width:720px){.shell{display:block}.sidebar{padding:15px 20px;display:block}.sidebar .side-nav,.sidebar-bottom{display:none}.topbar{padding:14px 20px}.top-right .pill{display:none}.course-header{margin:18px 20px 0;padding:14px}.course-tabs{margin:14px 20px 0}.course-tabs button{font-size:11px}.school-logo{width:52px;height:52px}.stamp-container{width:75px;height:75px}.stamp-container .stamp-photo{width:42px;height:42px}.course-identity{gap:10px}.course-identity h2{font-size:18px}.course-identity p{font-size:11px}.course-panel{padding:20px}.resource{align-items:flex-start;flex-direction:column}.content{padding:25px 20px}.controls{padding:18px 20px}.hero{grid-template-columns:1fr}.hero-copy{padding:38px 28px}.hero-art{min-height:310px;background-image:linear-gradient(180deg,#172720 0%,transparent 35%),linear-gradient(0deg,#172720,transparent 30%),url('https://commons.wikimedia.org/wiki/Special:FilePath/WendellPierce.jpg?width=900')}.slide-intro{grid-template-columns:1fr;padding:20px 0}.cards{grid-template-columns:1fr}.two-col{grid-template-columns:1fr}.slide{min-height:0}.progress-track{width:65px}}
+    @media(max-width:420px){.photo-grid{grid-template-columns:1fr 1fr;gap:8px}.photo-card img{height:170px}.photo-card div{padding:11px}.photo-card h3{font-size:17px}.buttons button{padding:11px}.crumb{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+    @media print{.shell{display:block}.sidebar,.topbar,.controls,.deck-head,.course-tabs,.print-button{display:none!important}.content,.course-panel{padding:0}.js #deck-view:not([hidden]) .slide[hidden]{display:block!important}.slide{break-after:page;min-height:0}.hero{min-height:450px}.course-header{margin:0 0 20px;box-shadow:none}.hub-card,.checkpoint-card{box-shadow:none}.form-group textarea{min-height:90px}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#lesson">Skip to lesson</a>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Course information">
+      <div class="brand"><div class="logo" aria-hidden="true">C</div><div><strong>Chisholm</strong><small>Literature classroom</small></div></div>
+      <div class="side-nav js-only" style="display:none">
+        <p class="side-label">In this lesson</p>
+        <nav class="nav" id="slide-nav" aria-label="Slide navigation"></nav>
+      </div>
+      <div class="sidebar-bottom"><div class="badge"><div class="badge-mark" aria-hidden="true">11</div><div>American Literature<small>Grade 11 &middot; Teacher badge</small></div></div></div>
+    </aside>
+    <main class="main" id="lesson">
+      <header class="topbar"><div class="crumb">ENGLISH 11 <span aria-hidden="true"> / </span> AMERICAN LITERATURE <span aria-hidden="true"> / </span> <strong>INTRODUCTION</strong></div><div class="top-right"><span class="pill">Unit study</span><button class="top-button js-only" id="fullscreen" type="button">Full screen &nearr;</button></div></header>
+      <!-- Place these three files alongside index.html, using the same names as the reference course page. -->
+      <div class="course-header">
+        <div class="course-identity">
+          <div class="school-logo" id="school-logo"><span class="asset-placeholder">School logo<br>not added</span></div>
+          <div><h2>English 11</h2><p>American Literature &mdash; Death of a Salesman: Introduction</p></div>
+        </div>
+        <div class="stamp-container" id="instructor-stamp"><span class="asset-placeholder">Instructor photo<br>&amp; stamp not added</span></div>
+      </div>
+      <nav class="course-tabs js-only" aria-label="Course sections">
+        <button type="button" data-panel="deck-view" aria-pressed="true">Slide Deck</button>
+        <button type="button" data-panel="resource-view" aria-pressed="false">Resource Hub</button>
+        <button type="button" data-panel="checkpoint-view" aria-pressed="false">Student Work Checkpoint</button>
+      </nav>
+      <div id="deck-view">
+      <div class="content">
+        <div class="deck-head"><span class="eyebrow">The American Dream &middot; A closer look</span><span class="counter js-only" id="counter" aria-live="polite"></span></div>
+
+        <section class="slide hero" data-title="The introduction" aria-labelledby="slide-1">
+          <div class="hero-copy"><div class="overline">11th grade English &nbsp; / &nbsp; American literature</div><h1 id="slide-1">Death of<br>a <em>Salesman.</em></h1><div class="hero-line"></div><p>An introduction to Arthur Miller, modern identity, and the promises we are taught to pursue.</p><div class="hero-tags"><span>Arthur Miller &middot; 1949</span><span>Opening lesson</span></div></div>
+          <div class="hero-art" role="img" aria-label="Portrait of actor Wendell Pierce, who played Willy Loman in the 2022 Broadway production"><div class="hero-caption">Wendell Pierce &middot; Willy Loman, 2022 Broadway<br><a href="https://commons.wikimedia.org/wiki/File:WendellPierce.jpg">Photo: Philip Romano</a> &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a><br>Portrait, not a production still</div></div>
+        </section>
+
+        <section class="slide" data-title="First impressions" aria-labelledby="slide-2">
+          <div class="slide-intro"><div><p class="kicker">01 &nbsp; / &nbsp; Before we read</p><h2 id="slide-2">Start with what<br>you noticed.</h2><p class="lead">We have just watched the beginning of the film. Before interpreting the whole story, pay attention to the details already on screen.</p><div class="takeaway">What does the opening make you wonder about work, home, and the person at its center?</div></div>
+          <div class="callout"><p class="overline">Think &rarr; pair &rarr; share</p><ol class="prompt-list"><li>What did you see or hear? Describe one specific detail.</li><li>What feeling did the setting, sound, or performance create?</li><li>What question do you have about Willy or his world?</li></ol><div class="rule"></div><p><strong>Observation first.<br>Interpretation next.</strong></p></div></div>
+          <div class="cards"><div class="card"><span class="num">LOOK FOR</span><h3>Setting</h3><p>What does the space around Willy suggest about his life?</p></div><div class="card"><span class="num">LISTEN FOR</span><h3>Sound &amp; voice</h3><p>How do music, pauses, or changes in voice shape the mood?</p></div><div class="card"><span class="num">NOTICE</span><h3>Performance</h3><p>What can posture, expression, or movement reveal?</p></div></div>
+        </section>
+
+        <section class="slide" data-title="Meet the play" aria-labelledby="slide-3">
+          <div class="slide-intro"><div><p class="kicker">02 &nbsp; / &nbsp; Context</p><h2 id="slide-3">A dream under<br>pressure.</h2><p class="lead">Arthur Miller's <em>Death of a Salesman</em> premiered in 1949, amid a changing postwar United States. It follows salesman Willy Loman and his family as they navigate work, expectations, and belonging.</p><p>Rather than treating success as a simple destination, the play asks what happens when a person's sense of worth becomes entangled with the idea of being successful.</p><div class="takeaway">Is success something we achieve, something others recognize, or something we inherit from the culture around us?</div></div>
+          <div class="callout dark"><p class="overline">A lens for reading</p><p><strong>The American Dream</strong></p><div class="rule"></div><p>A cultural idea that opportunity and prosperity are possible through effort. Who has access to that promise? Who defines what counts as success?</p></div></div>
+          <div class="cards"><div class="card"><span class="num">PERSONAL</span><h3>Identity</h3><p>How does a person want to be seen?</p></div><div class="card"><span class="num">FAMILIAL</span><h3>Expectation</h3><p>How do dreams move between parents and children?</p></div><div class="card"><span class="num">CULTURAL</span><h3>Value</h3><p>Who or what decides what a person is worth?</p></div></div>
+        </section>
+
+        <section class="slide" data-title="Many interpretations" aria-labelledby="slide-4">
+          <p class="kicker">03 &nbsp; / &nbsp; Character &amp; performance</p><h2 id="slide-4">One play. Many interpretations.</h2><p class="lead">Different productions invite us to hear and see the Loman family anew. These are portraits of the actors, not images of them in character.</p>
+          <div class="photo-grid">
+            <article class="photo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dustin%20Hoffman%20Cannes%202017.jpg?width=500" alt="Portrait of Dustin Hoffman" loading="lazy"><div><span class="tag">1985 film</span><h3>Dustin Hoffman</h3><p>as Willy Loman</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:Dustin_Hoffman_Cannes_2017.jpg">Georges Biard</a> &middot; <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a>; cropped and adjusted on Commons.</p></div></article>
+            <article class="photo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John%20Malkovich%2C1994%2001.jpg?width=500" alt="Portrait of John Malkovich" loading="lazy"><div><span class="tag">1985 film</span><h3>John Malkovich</h3><p>as Biff Loman</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:John_Malkovich,1994_01.jpg">Gorupdebesanez</a> &middot; <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></p></div></article>
+            <article class="photo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/WendellPierce.jpg?width=500" alt="Portrait of Wendell Pierce" loading="lazy"><div><span class="tag">2022 Broadway</span><h3>Wendell Pierce</h3><p>as Willy Loman</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:WendellPierce.jpg">Philip Romano</a> &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p></div></article>
+            <article class="photo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/SharonDClarke.jpg?width=500" alt="Portrait of Sharon D. Clarke" loading="lazy"><div><span class="tag">2022 Broadway</span><h3>Sharon D. Clarke</h3><p>as Linda Loman</p><p class="credit"><a href="https://commons.wikimedia.org/wiki/File:SharonDClarke.jpg">Philip Romano</a> &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></p></div></article>
+          </div><p class="note">Images are displayed with a visual crop. Compare the performances themselves when your teacher provides clips: how do voice, gesture, and casting shape your understanding? Photos load from Wikimedia Commons and require an internet connection.</p>
+        </section>
+
+        <section class="slide" data-title="A contested reception" aria-labelledby="slide-5">
+          <p class="kicker">04 &nbsp; / &nbsp; Historical context</p><h2 id="slide-5">Who gets to frame the story?</h2><p class="lead">The play prompted debate, but its reception was not simply negative: it won the 1949 Pulitzer Prize for Drama. A different controversy surrounded the 1951 film adaptation.</p>
+          <div class="cards"><div class="card"><span class="num">THE STUDIO</span><h3>A reassuring short</h3><p>Columbia Pictures commissioned a short called <em>Career of a Salesman</em> to accompany its 1951 film. It presented a positive picture of salesmanship and suggested Willy was not representative of the modern salesman.</p></div><div class="card"><span class="num">THE PLAYWRIGHT</span><h3>Miller objected</h3><p>Miller saw the short as undermining his work and threatened legal action. Columbia agreed to withdraw it. The dispute is about the framing of the film, not proof that the original play was broadly rejected.</p></div><div class="card"><span class="num">YOUR INTERPRETATION</span><h3>A question of power</h3><p>Does defending the profession shift attention away from the play's critique of aspiration and social values? What evidence would support or complicate that claim?</p></div></div>
+          <p class="note">Historical sources: <a href="https://doi.org/10.1111/j.1537-4726.2004.00136.x">Kevin Kerrane, “Arthur Miller vs. Columbia Pictures”</a> and <a href="https://www.pulitzer.org/winners/arthur-miller">The Pulitzer Prizes: Arthur Miller</a>. The title is <em>Career of a Salesman</em>, sometimes confused with “Life of a Salesman.”</p>
+        </section>
+
+        <section class="slide" data-title="Disillusioned modernity" aria-labelledby="slide-6">
+          <div class="slide-intro"><div><p class="kicker">05 &nbsp; / &nbsp; Disillusioned modernity</p><h2 id="slide-6">The modern self<br>in the city.</h2><p class="lead">Compare urban and cultural identities across verse and prose, then bring those insights to Miller's theater. Modernist writing often experiments with voice and form to represent a world that feels fragmented or uncertain.</p><div class="takeaway">How does the city shape the way a person sees themselves—and how others see them?</div></div>
+          <div class="callout dark"><p class="overline">Core objective</p><p><strong>Compare lyrical modernism with theatrical realism.</strong></p><div class="rule"></div><p>Explain how the choices of each form develop a related idea about identity, belonging, or disillusionment.</p></div></div>
+          <div class="cards"><div class="card"><span class="num">VERSE</span><h3>Listen to a voice</h3><p>In a class-selected Modernist poem, notice speaker, imagery, rhythm, and the speaker's relationship to the city.</p></div><div class="card"><span class="num">PROSE</span><h3>Trace a perspective</h3><p>In a class-selected prose passage, examine narration, setting, and details of cultural identity.</p></div><div class="card"><span class="num">THEATER</span><h3>Watch a world</h3><p>In Miller's opening, consider dialogue, stage space, performance, and the pressures of everyday life.</p></div></div>
+          <p class="note">Compare a specific detail from each text. Notice that Miller's realism also blends present action with memory; the forms are not rigid opposites.</p>
+        </section>
+
+        <section class="slide" data-title="Ego and collapse" aria-labelledby="slide-7">
+          <div class="slide-intro"><div><p class="kicker">06 &nbsp; / &nbsp; Ego and collapse</p><h2 id="slide-7">When aspiration<br>becomes identity.</h2><p class="lead">Bring Miller into conversation with Steinbeck and other mid-century texts from your course. Consider how individuals pursue a better life while facing social and economic pressures.</p><div class="takeaway">When a dream is difficult to attain, should we question the individual, the dream, or the conditions surrounding both?</div></div>
+          <div class="callout"><p class="overline">Core objective</p><p><strong>Build an argumentative claim across a diverse corpus.</strong></p><div class="rule"></div><p>Make a debatable comparison; support it with precise evidence from Miller and a class-selected Steinbeck text, and consider a meaningful difference.</p></div></div>
+          <div class="two-col"><div class="card"><span class="num">COMPARATIVE THINKING</span><h3>Look for a tension</h3><p>What do characters hope for? What pressures or assumptions shape those hopes? Where do the texts agree—and where do they diverge?</p></div><div class="card"><span class="num">CLAIM FRAME</span><h3>Make it arguable</h3><p>While Miller presents aspiration as <em>________</em>, Steinbeck suggests <em>________</em>; together, the texts complicate the belief that <em>________</em>.</p></div></div>
+        </section>
+
+        <section class="slide" data-title="Discussion & exit" aria-labelledby="slide-8">
+          <div class="slide-intro"><div><p class="kicker">07 &nbsp; / &nbsp; Reflect &amp; respond</p><h2 id="slide-8">Before we go<br>any further.</h2><p class="lead">Return to the film's opening. Use what you actually observed, not what you expect the story to become.</p><div class="callout"><p class="overline">Exit ticket</p><p><strong>What tension between personal ambition and society do you expect this play to explore?</strong></p><div class="rule"></div><p>Write 3–4 sentences. Include one detail from the opening, an interpretation of that detail, and a question you want to carry into the reading.</p></div></div><div><p class="kicker">Use this evidence pathway</p><div class="card"><span class="num">01</span><h3>I noticed...</h3><p>Describe a specific image, sound, line, or performance choice.</p></div><div class="card" style="margin-top:10px"><span class="num">02</span><h3>This might suggest...</h3><p>Explain a possible connection to work, identity, or expectation.</p></div><div class="card" style="margin-top:10px"><span class="num">03</span><h3>I wonder...</h3><p>Ask a question that cannot yet be answered from the opening alone.</p></div></div></div>
+        </section>
+
+        <section class="slide" data-title="Sources & credits" aria-labelledby="slide-9">
+          <div class="slide-intro"><div><p class="kicker">08 &nbsp; / &nbsp; Keep exploring</p><h2 id="slide-9">Sources &amp;<br>image credits.</h2><p class="lead">Good interpretations begin with careful evidence. Follow these sources for the historical context, casting, and photo licensing behind this introduction.</p><div class="takeaway">Next: read closely, compare thoughtfully, and keep questioning the dream.</div></div><div class="card"><p class="overline">Historical &amp; production sources</p><ul class="source-list"><li><a href="https://www.pulitzer.org/winners/arthur-miller">The Pulitzer Prizes: Arthur Miller</a></li><li><a href="https://doi.org/10.1111/j.1537-4726.2004.00136.x">Kevin Kerrane, “Arthur Miller vs. Columbia Pictures: The Strange Case of <em>Career of a Salesman</em>”</a></li><li><a href="https://www.broadway.com/photos/gallery/1062/show-photos-death-of-a-salesman/123469/">Broadway.com: 2022 production photograph and cast caption</a></li><li><a href="https://www.imdb.com/title/tt0089006/fullcredits/">1985 film cast credits</a></li></ul><p class="overline" style="margin-top:25px">Portraits</p><p class="note">Photographs by Philip Romano, Georges Biard, and Gorupdebesanez are credited alongside the images. Individual source and license links are on the portraits and cover. Display crops are applied; underlying image modifications are noted where applicable.</p></div></div>
+        </section>
+      </div>
+      <footer class="controls js-only">
+        <div class="progress-wrap"><div class="progress-track" aria-hidden="true"><div class="progress-bar" id="progress"></div></div><span>LESSON PROGRESS</span></div>
+        <div class="buttons"><button id="prev" type="button">&larr; Previous</button><button id="next" class="next" type="button">Next slide &rarr;</button></div>
+      </footer>
+      </div>
+      <section id="resource-view" class="course-panel" aria-labelledby="resources-heading">
+        <div class="hub-card">
+          <p class="kicker">Course references</p><h2 id="resources-heading">Lesson Resource &amp; Reference Hub</h2>
+          <p>Access the play and background resources. Publisher descriptions and some historical sources may reveal later plot details.</p>
+          <div class="resource"><div><h3><em>Death of a Salesman</em> &mdash; publisher's edition</h3><p>Penguin Random House offers print and ebook editions. Purchase or institutional access may be required; this is not a free PDF.</p></div><a href="https://www.penguinrandomhouse.com/books/323531/death-of-a-salesman-by-arthur-miller-introduction-by-christopher-bigsby/">View publisher &rarr;</a></div>
+          <div class="resource"><div><h3>Arthur Miller and the Pulitzer Prize</h3><p>Explore the prize awarded to the play in 1949.</p></div><a href="https://www.pulitzer.org/winners/arthur-miller">View source &rarr;</a></div>
+          <div class="resource"><div><h3>The <em>Career of a Salesman</em> controversy</h3><p>Kevin Kerrane's study of Miller's dispute with Columbia Pictures. Access may depend on the publisher or library.</p></div><a href="https://doi.org/10.1111/j.1537-4726.2004.00136.x">View article &rarr;</a></div>
+        </div>
+      </section>
+      <section id="checkpoint-view" class="course-panel" aria-labelledby="checkpoint-heading">
+        <div class="checkpoint-card">
+          <p class="kicker">Reflect &amp; respond</p><h2 id="checkpoint-heading">Student Work Checkpoint</h2>
+          <p>Use your observations from the film's opening. Your answers stay on this page and are not submitted or saved; print them before leaving.</p>
+          <form id="checkpoint-form">
+            <div class="form-group"><label for="student-name">Name</label><input id="student-name" name="student-name" autocomplete="name"></div>
+            <div class="form-group"><label for="observation">What specific detail did you notice in the opening?</label><textarea id="observation" name="observation"></textarea></div>
+            <div class="form-group"><label for="interpretation">What might that detail suggest about work, identity, or expectation?</label><textarea id="interpretation" name="interpretation"></textarea></div>
+            <div class="form-group"><label for="question">What question will you carry into the reading?</label><textarea id="question" name="question"></textarea></div>
+            <button type="submit" class="print-button">Print checkpoint</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    (() => {
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const nav = document.getElementById('slide-nav');
+      const counter = document.getElementById('counter');
+      const progress = document.getElementById('progress');
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
+      const fullscreen = document.getElementById('fullscreen');
+      const panelButtons = Array.from(document.querySelectorAll('[data-panel]'));
+      const panels = panelButtons.map(button => document.getElementById(button.dataset.panel));
+      let current = 0;
+      function showPanel(id) {
+        panels.forEach(panel => { panel.hidden = panel.id !== id; });
+        panelButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.panel === id)));
+      }
+      panelButtons.forEach(button => button.addEventListener('click', () => showPanel(button.dataset.panel)));
+      function loadBrandImage(containerId, filename, alt, className) {
+        const container = document.getElementById(containerId);
+        const image = new Image();
+        image.className = className;
+        image.alt = alt;
+        image.addEventListener('load', () => {
+          container.append(image);
+          container.classList.add('has-asset');
+          if (containerId === 'school-logo') container.querySelector('.asset-placeholder').hidden = true;
+          if (container.querySelector('.stamp-photo') && container.querySelector('.stamp-svg')) container.classList.add('has-both');
+        });
+        image.addEventListener('error', () => { console.warn('Branding asset not found:', filename); });
+        image.src = filename;
+      }
+      loadBrandImage('school-logo', 'chisholm_logo.png', 'Chisholm school logo', '');
+      loadBrandImage('instructor-stamp', 'boehm_photo.jpg', 'Instructor photo', 'stamp-photo');
+      loadBrandImage('instructor-stamp', 'boehm-stamp.svg', 'Classroom stamp', 'stamp-svg');
+      document.getElementById('checkpoint-form').addEventListener('submit', event => { event.preventDefault(); window.print(); });
+      const buttons = slides.map((slide, index) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        const number = document.createElement('span');
+        number.textContent = String(index + 1).padStart(2, '0');
+        button.append(number, document.createTextNode(slide.dataset.title));
+        button.addEventListener('click', () => { showPanel('deck-view'); showSlide(index); });
+        nav.append(button);
+        return button;
+      });
+      function showSlide(index) {
+        current = Math.max(0, Math.min(slides.length - 1, index));
+        slides.forEach((slide, i) => { slide.hidden = i !== current; });
+        buttons.forEach((button, i) => {
+          if (i === current) button.setAttribute('aria-current', 'step');
+          else button.removeAttribute('aria-current');
+        });
+        counter.innerHTML = '<strong>' + String(current + 1).padStart(2, '0') + '</strong> / ' + String(slides.length).padStart(2, '0');
+        progress.style.width = ((current + 1) / slides.length * 100) + '%';
+        prev.disabled = current === 0;
+        next.disabled = current === slides.length - 1;
+      }
+      prev.addEventListener('click', () => showSlide(current - 1));
+      next.addEventListener('click', () => showSlide(current + 1));
+      document.addEventListener('keydown', event => {
+        if (document.getElementById('deck-view').hidden || event.altKey || event.ctrlKey || event.metaKey || event.target.closest('input, textarea, select, [contenteditable="true"]')) return;
+        if (event.key === 'ArrowRight') { event.preventDefault(); showSlide(current + 1); }
+        if (event.key === 'ArrowLeft') { event.preventDefault(); showSlide(current - 1); }
+      });
+      if (document.fullscreenEnabled) {
+        fullscreen.addEventListener('click', async () => {
+          try {
+            if (document.fullscreenElement) await document.exitFullscreen();
+            else await document.documentElement.requestFullscreen();
+          } catch (error) {
+            fullscreen.textContent = 'Full screen unavailable';
+            console.error('Unable to change full screen mode:', error);
+          }
+        });
+        document.addEventListener('fullscreenchange', () => {
+          fullscreen.textContent = document.fullscreenElement ? 'Exit full screen ↙' : 'Full screen ↗';
+        });
+      } else {
+        fullscreen.hidden = true;
+      }
+      document.documentElement.classList.add('js');
+      document.querySelector('.side-nav').style.display = '';
+      showPanel('deck-view');
+      showSlide(0);
+    })();
+  </script>
+</body>
+</html>
